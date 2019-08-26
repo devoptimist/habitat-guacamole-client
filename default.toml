@@ -1,0 +1,10 @@
+api-session-timeout = "60"
+available-languages = "en"
+enable-environment-properties = "true"
+guacd-hostname = "localhost"
+guacd-port = "4822"
+guacd-ssl = "false"
+log-level = "info"
+[tomcat]
+port = 8080
+listen_address = ""

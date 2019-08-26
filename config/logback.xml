@@ -1,0 +1,12 @@
+<configuration>
+  <appender name="{{cfg.log-level}}" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="{{cfg.log-level}}">
+        <appender-ref ref="{{cfg.log-level}}"/>
+    </root>
+
+</configuration>

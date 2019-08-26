@@ -1,0 +1,13 @@
+#!{{pkgPathFor "core/bash"}}/bin/bash -x
+
+exec 2>&1
+
+echo "Preparing TOMCAT_HOME..."
+# Move directories that ship in the package into place
+cp -a {{pkgPathFor "core/tomcat8"}}/tc {{pkg.svc_var_path}}/
+
+cp {{pkg.path}}/*.war {{pkg.svc_var_path}}/tc/webapps
+
+ln -vsf {{pkg.svc_config_path}}/server.xml {{pkg.svc_var_path}}/tc/server.xml
+
+echo "Done preparing TOMCAT_HOME"

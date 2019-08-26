@@ -1,0 +1,9 @@
+#!{{pkgPathFor "core/bash"}}/bin/bash
+
+exec 2>&1
+
+export JAVA_HOME="{{pkgPathFor "core/corretto"}}"
+export TOMCAT_HOME="{{pkg.svc_var_path}}/tc"
+export GUACAMOLE_HOME="{{pkg.svc_config_path}}"
+
+exec ${TOMCAT_HOME}/bin/catalina.sh run

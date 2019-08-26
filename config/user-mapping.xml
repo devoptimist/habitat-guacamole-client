@@ -1,0 +1,17 @@
+<user-mapping>
+  {{#each cfg.users as |user|~}}
+  <authorize
+    username="{{user.ui_user}}"
+    password="{{user.ui_pass}}"
+    >
+    {{~#each user.connections as |con|}}
+    <connection name="{{con.name}}">
+      <protocol>{{con.protocol}}</protocol>
+      {{~#each con.params as |con_key con_value|}}
+      <param name="{{con_key}}">{{con_value}}</param>
+      {{~/each}}
+    </connection>
+    {{~/each}}
+  </authorize>
+  {{/each}}
+</user-mapping>
